@@ -1,3 +1,3 @@
-const list = ["something"];
+const list = [];
 
 module.exports = list;

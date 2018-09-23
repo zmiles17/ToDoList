@@ -1,0 +1,27 @@
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    "header"
+    "form";
+}
+header{
+    background-image: linear-gradient(to right, rgb(165, 7, 104), purple);
+    grid-area: header;
+}
+h1{
+    font-weight: 100;
+    font-size: 40px;
+    font-family: "Roboto";
+    color: white;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+form {
+    grid-area: form;
+    border-top: solid 1px rgb(165, 7, 104);
+    border-right: solid 1px rgb(165, 7, 104);
+    border-left: solid 1px rgb(165, 7, 104);
+    justify-self: center;
+    margin: 100px;
+}

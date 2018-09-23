@@ -3,8 +3,8 @@ const list = require('../Data/todolist');
 module.exports = function(app){
     
     app.post('/add', function(req, res){
-       console.log(req.body);
-       list.push(req.body);
+       console.log('Anything');
+       list.push(req.body.TodoItem);
        res.send(list);
     //    res.redirect('/');
     })
@@ -13,5 +13,10 @@ module.exports = function(app){
     })
     app.get('/api/list', function(req, res){
         res.json(list);
+    })
+    app.delete('/delete', function(req, res){
+        
+         list.splice(req.body.index, 1);
+         res.json(list);
     })
 }

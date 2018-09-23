@@ -1,23 +1,28 @@
 
-const addListItem = function(event){
-    event.preventDefault();
-    console.log('Anthing');
-    $.getJSON('/api/list').then(data => {
-        console.log(data);
-    const variable = data.map(element => `<li>${element}</li>`)
-    $('#todo-list').html(variable);
-    console.log(variable);
-    
-});
-}
 
-const submitItem = function(event){
+const submitItem = function (event) {
     event.preventDefault();
     const data = $('input').val().trim();
-    $.ajax({url: "/add", method: "POST", data: data});
+    $.ajax({ url: "/add", method: "POST", data: { TodoItem: data } }).then(data => {
+        const variable = data.map((element, index) => `<input type="checkbox" id="checkbox"></input><li id=${index}>${element}</li><i class="fas fa-times"></i>`)
+        $('#todo-list').html(variable);
+        $('i').on('click', deleteItem);
+    });
 }
 
+const deleteItem = function (event) {
+    event.preventDefault();
+    console.log(event.target);
+    const index = $(`li`).attr("id");
+    console.log(index);
+    $.ajax({ url: "/delete", method: "DELETE", data: { index: index } }).then(listItem => {
+        const variable = listItem.map((e, index) => e.listItem === `<input type="checkbox" id="checkbox"></input><li id=${index}>${element}</li><i class="fas fa-times"></i>`);
+        $('#todo-list').html(variable);
+    });
+}
+
+
 $('form').on('submit', submitItem);
-$('button').on('click', addListItem);
+
 
 

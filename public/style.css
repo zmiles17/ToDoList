@@ -1,15 +1,18 @@
 body {
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 100px 100px 1fr;
     grid-template-areas:
     "header"
-    "form";
+    "form"
+    "ul";
 }
-header{
+
+header {
     background-image: linear-gradient(to right, rgb(165, 7, 104), purple);
     grid-area: header;
 }
-h1{
+
+h1 {
     font-weight: 100;
     font-size: 40px;
     font-family: "Roboto";
@@ -17,11 +20,41 @@ h1{
     margin-top: 30px;
     margin-left: 25px;
 }
+
 form {
     grid-area: form;
-    border-top: solid 1px rgb(165, 7, 104);
-    border-right: solid 1px rgb(165, 7, 104);
-    border-left: solid 1px rgb(165, 7, 104);
+    justify-self: center;
+    margin: 50px;
+}
+
+#userInput {
+    border: rgba(128, 0, 128, 0.521) solid 1px;
+    border-radius: 5px;
+    background-color: rgb(238, 243, 245);
+    font-family: 'Roboto';
+    font-weight: 500;
+    width: 250px;
+}
+
+#checkbox {
+    border: 5px black solid;
+}
+
+#add-btn {
+    background: none;
+    color: darkblue;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+ul {
+    grid-area: "ul";
     justify-self: center;
     margin: 100px;
+}
+
+li {
+    display: inline-block;
 }

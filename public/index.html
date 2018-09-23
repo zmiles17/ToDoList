@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
@@ -16,8 +16,8 @@
         <h1>Zack's to do list</h1>
     </header>
     <form action="/add" method="POST">
-        <input type="text" placeholder="Add a to do" name="Todo">
-        <button type="submit"><i class="fas fa-share"></i></button>
+        <input type="text" placeholder="Add a to do" name="Todo" id="userInput">
+        <button type="submit" id="add-btn"><i class="fas fa-share"></i></button>
     </form>
     <ul id="todo-list">
 

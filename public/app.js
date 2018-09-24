@@ -1,26 +1,32 @@
-
+const deleteItem = function (event) {
+    event.preventDefault();
+    const index = event.target.id;
+    $.ajax({ url: "/delete", method: "DELETE", data: { index: index } }).then(listItem => {
+        const variable = listItem.map((e, index) => `<input type="checkbox" class="checkbox"></input>
+        <li>${e}</li>
+        <i class="fas fa-times" id='${index}'></i><br>`);
+        $('#todo-list').html(variable);
+        $('.fa-times').on('click', deleteItem);
+        console.log(variable);
+    });
+    console.log(event.target.id);
+    console.log(index);
+}
 
 const submitItem = function (event) {
     event.preventDefault();
     const data = $('input').val().trim();
     $.ajax({ url: "/add", method: "POST", data: { TodoItem: data } }).then(data => {
-        const variable = data.map((element, index) => `<input type="checkbox" id="checkbox"></input><li id=${index}>${element}</li><i class="fas fa-times" id="x"></i><br>`)
+        const variable = data.map((element, index) => `<input type="checkbox" class="checkbox"></input>
+        <li>${element}</li>
+        <i class="fas fa-times" id='${index}'></i><br>`)
         $('#todo-list').html(variable);
-        $('#x').on('click', deleteItem);
+        $('.fa-times').on('click', deleteItem);
     });
-}
-
-const deleteItem = function (event) {
-    event.preventDefault();
-    console.log(event.target);
-    const index = $(`li`).attr("id");
-    console.log(index);
-    $.ajax({ url: "/delete", method: "DELETE", data: { index: index } }).then(listItem => {
-        const variable = listItem.map((e, index) => e.listItem === `<input type="checkbox" id="checkbox"></input><li id=${index}>${e}</li><i class="fas fa-times" id="x"></i><br>`);
-        $('#todo-list').html(variable);
-    });
+    
 }
 
 
 $('form').on('submit', submitItem);
+
 

@@ -50,7 +50,7 @@ form {
     outline: inherit;
 }
 ul {
-    grid-area: "ul";
+    grid-area: ul;
     justify-self: center;
     margin: 100px;
 }

@@ -3,7 +3,6 @@ const list = [];
     app.post('/add', function(req, res){
        list.push(req.body.TodoItem);
        res.send(list);
-    //    res.redirect('/');
     })
     app.get('/', function(req, res){
         res.json(list);

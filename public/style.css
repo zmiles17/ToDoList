@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: 100px 100px 1fr;
+    grid-template-rows: 100px 75px 1fr;
     grid-template-areas:
     "header"
     "form"
@@ -24,7 +24,7 @@ h1 {
 form {
     grid-area: form;
     justify-self: center;
-    margin: 50px;
+    margin: 30px;
 }
 
 #userInput {
@@ -41,7 +41,7 @@ form {
 
 #add-btn {
     background: none;
-    color: darkblue;
+    color: rgb(26, 61, 156);
     border: none;
     padding: 0;
     font: inherit;
@@ -51,9 +51,22 @@ form {
 ul {
     grid-area: ul;
     justify-self: center;
-    margin: 100px;
 }
 
 li {
-    display: inline-block;
+    background-color: rgb(238, 243, 245);
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    /* width: 270px;
+    margin-right: 10px; */
+}
+
+.fa-times {
+    /* margin-left: 160px; */
+    color: rgb(26, 61, 156);
+}
+
+i {
+    cursor: pointer;
 }

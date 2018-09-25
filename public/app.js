@@ -7,10 +7,7 @@ const deleteItem = function (event) {
         <i class="fas fa-times" id='${index}'></i><br>`);
         $('#todo-list').html(variable);
         $('.fa-times').on('click', deleteItem);
-        console.log(variable);
     });
-    console.log(event.target.id);
-    console.log(index);
 }
 
 const submitItem = function (event) {
@@ -23,9 +20,7 @@ const submitItem = function (event) {
         $('#todo-list').html(variable);
         $('.fa-times').on('click', deleteItem);
     });
-    
 }
-
 
 $('form').on('submit', submitItem);
 

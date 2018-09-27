@@ -16,7 +16,7 @@ const submitItem = function (event) {
 
 const getItems = function () {
     $.getJSON('/api/list').then(function (data) {
-        const variable = data.map((element, index) => `<input type="checkbox" class="checkbox" ${element.completed ? 'checked' : ''} data-id=${index}></input><li>${element.name}</li><i class="fas fa-times" id='${index}'></i><br>`)
+        const variable = data.map((element, index) => `<li><input type="checkbox" class="checkbox" ${element.completed ? 'checked' : ''} data-id=${index}></input>${element.name}<i class="fas fa-times" id='${index}'></i></li><br>`)
         $('#todo-list').html(variable);
         $('.fa-times').on('click', deleteItem);
         $('.checkbox').on('click', function (event) {

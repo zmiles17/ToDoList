@@ -23,6 +23,7 @@ div {
 
 main {
     grid-area: main;
+    font-family: 'Roboto';
 }
 
 h1 {
@@ -40,6 +41,12 @@ form {
 
 .fa-times {
     cursor: pointer;
+    color: rgb(26, 61, 156);
+    float: right;
+}
+
+.fa-share {
+    margin-left: 5px;
 }
 
 #userInput {
@@ -48,8 +55,9 @@ form {
     background-color: rgba(238, 231, 231, 0.541);
     font-family: 'Roboto';
     font-weight: 500;
-    width: 220px;
+    width: 75%;
     justify-self: center;
+    height: 20px;
 }
 
 #checkbox {
@@ -72,8 +80,15 @@ ul {
     text-align: center;
     grid-column: span 5/6;
 }
+
 li {
+    margin-top: 15px;
     display: inline-block;
+    width: 75%;
+    background: rgba(238, 231, 231, 0.541);
+    height: 20px;
+    text-align: left;
+    font-weight: 700;
 }
 
 ::placeholder {

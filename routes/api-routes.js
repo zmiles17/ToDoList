@@ -1,8 +1,12 @@
 const list = [];
  module.exports = function(app){
     app.post('/add', function(req, res){
-       list.push(req.body.TodoItem);
-       res.send(list);
+       const todoObject = {
+           name: req.body.TodoItem,
+           completed: false
+       } 
+       list.push(todoObject);
+       res.redirect('/');
     })
     app.get('/', function(req, res){
         res.json(list);
@@ -15,4 +19,10 @@ const list = [];
          res.json(list);
          console.log(list);
     })
+    app.put('/api/update', (req, res) => {
+        list[req.body.ID].completed = !list[req.body.ID].completed;
+        // res.json(list);
+        res.status(200).json(list);
+        // db.CollectionName.findOneAndUpdate({ _id: req.params.id }, {$set: { completed: req.body.completed}})
+      });
 }

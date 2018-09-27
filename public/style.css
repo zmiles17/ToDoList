@@ -82,9 +82,9 @@ ul {
 }
 
 li {
-    margin-top: 15px;
+    margin-top: 20px;
     display: inline-block;
-    width: 75%;
+    width: 87%;
     background: rgba(238, 231, 231, 0.541);
     height: 20px;
     text-align: left;
@@ -110,7 +110,7 @@ li {
 
     form {
         display: inline-block;
-        grid-column: span 5/6;
+        grid-column: 1/4;
         height: 30px;
         padding-top: 50px;
     }
@@ -121,7 +121,7 @@ li {
     }
 
     li {
-        width: 80%;
+        width: 87%;
         background: rgba(238, 231, 231, 0.541);
     }
 }
